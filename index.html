@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Inline SVG favicon (draft page + launch spark) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2317223b'/%3E%3Cpath d='M11 7h7l4 4v14H11z' fill='none' stroke='%23faf6f0' stroke-width='1.6'/%3E%3Cpath d='M18 7v4h4' fill='none' stroke='%23faf6f0' stroke-width='1.6'/%3E%3Cpath d='M15.5 21l2.2-6.5 2.2 6.5-2.2-1.5z' fill='%23ff5a3c'/%3E%3C/svg%3E">
+  <!-- Favicon: LaunchDraft paper-plane mark on ink -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20270%20270'%3E%3Crect%20width='270'%20height='270'%20rx='60'%20fill='%2317223b'/%3E%3Cpath%20d='M265,42%20L4,130%20L80,165%20L208,83%20L109,176%20L96,233%20L144,197%20L201,222%20Z'%20fill='%23e0501c'/%3E%3Cpath%20d='M109,176%20L96,233%20L144,197%20Z'%20fill='%23b9400e'/%3E%3C/svg%3E">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -22,13 +22,7 @@
   <header class="nav" id="nav">
     <div class="wrap nav__inner">
       <a class="logo" href="#top" aria-label="LaunchDraft home">
-        <!-- Swap this inline mark for your uploaded assets/logo.svg when ready -->
-        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
-          <rect width="32" height="32" rx="7" fill="#17223b"/>
-          <path d="M11 7h7l4 4v14H11z" fill="none" stroke="#faf6f0" stroke-width="1.6"/>
-          <path d="M18 7v4h4" fill="none" stroke="#faf6f0" stroke-width="1.6"/>
-          <path d="M15.5 21l2.2-6.5 2.2 6.5-2.2-1.5z" fill="#ff5a3c"/>
-        </svg>
+        <img class="logo__mark" src="launchdraft_logo.svg" alt="" width="30" height="30" />
         <span>Launch<b>Draft</b></span>
       </a>
 
@@ -57,7 +51,7 @@
 
         <h1 class="hero__title reveal">
           From <span class="word-draft">Draft</span> to
-          <span class="word-launch">Launch<svg class="rocket" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M12 15l-3-3a11 11 0 0 1 8-8 11 11 0 0 1-8 8z"/><path d="M15 9a2 2 0 1 0-3-3"/></svg></span>
+          <span class="word-launch">Launch<svg class="rocket" viewBox="0 0 270 270" aria-hidden="true" fill="currentColor"><path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z"/></svg></span>
         </h1>
 
         <p class="hero__sub reveal">
@@ -256,13 +250,8 @@
       <div class="footer__grid">
         <div>
           <a class="logo" href="#top" aria-label="LaunchDraft home">
-            <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
-              <rect width="32" height="32" rx="7" fill="#faf6f0"/>
-              <path d="M11 7h7l4 4v14H11z" fill="none" stroke="#17223b" stroke-width="1.6"/>
-              <path d="M18 7v4h4" fill="none" stroke="#17223b" stroke-width="1.6"/>
-              <path d="M15.5 21l2.2-6.5 2.2 6.5-2.2-1.5z" fill="#ff5a3c"/>
-            </svg>
-            <span>Launch<b style="color:#ff9a86">Draft</b></span>
+            <img class="logo__mark" src="launchdraft_logo.svg" alt="" width="30" height="30" />
+            <span>Launch<b style="color:var(--accent-tint)">Draft</b></span>
           </a>
           <p class="footer__tag">Websites built, hosted, and maintained for local businesses. From draft to launch.</p>
         </div>

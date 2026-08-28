@@ -11,14 +11,15 @@ Static site, ready to deploy on **GitHub Pages**.
 |------|---------|
 | `index.html` | The full one-page site (nav, hero, process, features, pricing, FAQ, footer) |
 | `styles.css` | All styling — design tokens, layout, components, responsive rules |
-| `assets/` | Brand assets (drop your `logo.svg` here) |
+| `launchdraft_logo.svg` | The paper-plane brand mark (used in nav, footer, favicon, hero) |
+| `assets/logo.svg` | Duplicate of the brand mark for asset reference |
 | `.claude/skills/web-designer/` | Vendored [web-designer](https://github.com/MickeyAlton33/web-designer-plugin) skill (MIT) |
 
 ## Design
 
-- **Palette:** warm cream `#faf6f0` · deep ink `#17223b` · persimmon accent `#ff5a3c`
+- **Palette:** warm cream `#faf6f0` · deep ink `#17223b` · orange accent `#e0501c` (matched to the logo)
 - **Type:** Quicksand (logo) · Bricolage Grotesque (display) · Hanken Grotesk (body)
-- **Signature:** the hero tagline where *Draft* is a sketched/outlined state and *Launch* snaps to solid persimmon
+- **Signature:** the hero tagline where *Draft* is a sketched/outlined state and *Launch* snaps to solid orange, with a paper-plane echo of the logo
 
 ## Deploy to GitHub Pages
 
@@ -28,14 +29,11 @@ Static site, ready to deploy on **GitHub Pages**.
 4. When you have `launchdraft.net`, add it under **Custom domain** and commit a `CNAME`
    file containing `launchdraft.net`.
 
-## Swapping in your logo
+## Logo
 
-The logo currently uses an inline placeholder mark plus the **Quicksand** wordmark.
-When your `logo.svg` is ready:
-
-1. Put the file at `assets/logo.svg`.
-2. In `index.html`, replace the inline `<svg class="logo__mark">…</svg>` in the nav
-   (and footer) with `<img class="logo__mark" src="assets/logo.svg" alt="LaunchDraft" />`.
+The paper-plane mark (`launchdraft_logo.svg`) is wired into the nav, footer, hero
+accent, and favicon, paired with the **Quicksand** wordmark. To change it, replace
+`launchdraft_logo.svg` (and `assets/logo.svg`) — the markup references it by path.
 
 ## Contact placeholder
 

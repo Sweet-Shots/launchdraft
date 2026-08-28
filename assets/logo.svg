@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="LaunchDraft">
-  <rect width="32" height="32" rx="7" fill="#17223b"/>
-  <path d="M11 7h7l4 4v14H11z" fill="none" stroke="#faf6f0" stroke-width="1.6"/>
-  <path d="M18 7v4h4" fill="none" stroke="#faf6f0" stroke-width="1.6"/>
-  <path d="M15.5 21l2.2-6.5 2.2 6.5-2.2-1.5z" fill="#ff5a3c"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 270">
+  <!-- Main body (light orange) -->
+  <path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z"
+        fill="#E0501C"/>
+  <!-- Folded underside / shadow (darker orange) -->
+  <path d="M109,176 L96,233 L144,197 Z"
+        fill="#B9400E"/>
 </svg>
