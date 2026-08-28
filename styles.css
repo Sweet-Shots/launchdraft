@@ -695,7 +695,9 @@ body.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rota
 .section { position: relative; isolation: isolate; --grid-line: rgba(23,34,59,.06); }
 .section--ink { --grid-line: rgba(250,246,240,.06); }
 .section > .wrap { position: relative; z-index: 1; }
-.section::before {
+/* Grid renders ONLY on sections explicitly marked grid-left/grid-right,
+   so card sections stay clean behind their cards. */
+.grid-left::before, .grid-right::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background-image:
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
