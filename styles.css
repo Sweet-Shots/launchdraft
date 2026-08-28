@@ -653,3 +653,9 @@ body.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rota
 
 /* Offset anchored sections so the sticky nav doesn't cover their headings */
 .section, .page-hero, [id] { scroll-margin-top: 5rem; }
+
+/* FAQ grid: even 2-up flow; a lone final card spans full width */
+.features--faq { grid-template-columns: repeat(2, 1fr); }
+.features--faq .feature { grid-column: auto; }
+.features--faq .feature:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (max-width: 900px) { .features--faq { grid-template-columns: 1fr; } }
