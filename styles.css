@@ -485,7 +485,7 @@ body.cursor-on input, body.cursor-on textarea, body.cursor-on select { cursor: t
   flex: none;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 26s linear infinite;
+  animation: marquee 13s linear infinite;
 }
 .marquee__track span {
   font-family: 'Bricolage Grotesque', sans-serif;
