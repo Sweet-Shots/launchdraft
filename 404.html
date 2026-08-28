@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found — LaunchDraft</title>
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20270%20270'%3E%3Crect%20width='270'%20height='270'%20rx='60'%20fill='%2317223b'/%3E%3Cpath%20d='M265,42%20L4,130%20L80,165%20L208,83%20L109,176%20L96,233%20L144,197%20L201,222%20Z'%20fill='%23e0501c'/%3E%3Cpath%20d='M109,176%20L96,233%20L144,197%20Z'%20fill='%23b9400e'/%3E%3C/svg%3E">
+
+  <!-- Self-contained so it renders correctly at any unknown URL path -->
+  <style>
+    :root{
+      --bg:#faf6f0; --ink:#17223b; --ink-soft:#33405c; --muted:#6f6a63;
+      --accent:#e0501c; --accent-deep:#b9400e; --line:#ded3c4;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--ink);
+      font-family:'Hanken Grotesk',system-ui,sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      display:flex; align-items:center; justify-content:center;
+      min-height:100dvh; padding:2rem; text-align:center; overflow:hidden;
+    }
+    .blueprint{
+      position:fixed; inset:0; z-index:0; pointer-events:none;
+      background-image:
+        linear-gradient(to right, rgba(23,34,59,.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(23,34,59,.05) 1px, transparent 1px);
+      background-size:46px 46px;
+      -webkit-mask-image:radial-gradient(80% 70% at 50% 45%, #000 30%, transparent 75%);
+              mask-image:radial-gradient(80% 70% at 50% 45%, #000 30%, transparent 75%);
+    }
+    .wrap{position:relative; z-index:1; max-width:34rem}
+
+    /* Stage holds the logo and the floating question marks */
+    .stage{position:relative; width:min(90vw,420px); height:220px; margin:0 auto 1.5rem;
+      display:flex; align-items:center; justify-content:center}
+    .logo{display:inline-flex; align-items:center; gap:.6rem; text-decoration:none;
+      font-family:'Quicksand',system-ui,sans-serif; font-weight:700;
+      font-size:clamp(1.8rem,6vw,2.6rem); color:var(--ink); position:relative; z-index:2}
+    .logo b{color:var(--accent)}
+    .logo svg{width:clamp(40px,9vw,54px); height:clamp(40px,9vw,54px)}
+
+    .qm{position:absolute; z-index:1; color:var(--ink);
+      font-family:'Bricolage Grotesque',serif; font-weight:800; line-height:1;
+      user-select:none; animation:bob 4s ease-in-out infinite}
+    .qm.q1{top:-6%;  left:6%;   font-size:2.4rem; transform:rotate(-18deg); animation-delay:0s}
+    .qm.q2{top:2%;   right:8%;  font-size:3.2rem; transform:rotate(14deg);  animation-delay:.5s}
+    .qm.q3{bottom:2%; left:14%; font-size:2.9rem; transform:rotate(10deg);  animation-delay:1s}
+    .qm.q4{bottom:-4%; right:16%; font-size:2.1rem; transform:rotate(-12deg); animation-delay:1.5s}
+    .qm.q5{top:34%;  left:-4%;  font-size:1.8rem; transform:rotate(8deg);   animation-delay:.8s}
+    .qm.q6{top:40%;  right:-2%; font-size:2.4rem; transform:rotate(-8deg);  animation-delay:.3s}
+    @keyframes bob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+    @media (prefers-reduced-motion: reduce){ .qm{animation:none} }
+
+    .code{font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
+      font-size:clamp(4.5rem,18vw,8rem); letter-spacing:-.04em; line-height:1;
+      color:var(--ink); margin:0}
+    .msg{font-size:clamp(1.1rem,3.5vw,1.4rem); color:var(--ink-soft); margin:.75rem 0 1.75rem}
+    .home-link{display:inline-flex; align-items:center; gap:.5rem;
+      font-weight:700; padding:.85em 1.5em; border-radius:999px;
+      background:var(--accent); color:#fff; border:2px solid var(--accent);
+      transition:background .18s ease, transform .18s ease; text-decoration:none}
+    @media (hover:hover){ .home-link:hover{background:var(--accent-deep); border-color:var(--accent-deep); transform:translateY(-2px)} }
+    .home-link:focus-visible{outline:3px solid var(--accent); outline-offset:3px}
+    ::selection{background:var(--accent); color:#fff}
+  </style>
+</head>
+<body>
+  <div class="blueprint" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <div class="stage">
+      <span class="qm q1" aria-hidden="true">?</span>
+      <span class="qm q2" aria-hidden="true">?</span>
+      <span class="qm q3" aria-hidden="true">?</span>
+      <span class="qm q4" aria-hidden="true">?</span>
+      <span class="qm q5" aria-hidden="true">?</span>
+      <span class="qm q6" aria-hidden="true">?</span>
+
+      <a class="logo" href="/" aria-label="LaunchDraft home">
+        <svg viewBox="0 0 270 270" aria-hidden="true"><path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z" fill="#e0501c"/><path d="M109,176 L96,233 L144,197 Z" fill="#b9400e"/></svg>
+        <span>Launch<b>Draft</b></span>
+      </a>
+    </div>
+
+    <p class="code">404</p>
+    <p class="msg">Something unexpected happened,</p>
+    <a class="home-link" href="/">Back to home <span aria-hidden="true">→</span></a>
+  </main>
+</body>
+</html>
