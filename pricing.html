@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — LaunchDraft</title>
+  <meta name="description" content="Simple monthly plans for local business websites. Standard, Professional, and Enterprise. A one-time setup, then one flat rate for hosting, security, and edits." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20270%20270'%3E%3Crect%20width='270'%20height='270'%20rx='60'%20fill='%2317223b'/%3E%3Cpath%20d='M265,42%20L4,130%20L80,165%20L208,83%20L109,176%20L96,233%20L144,197%20L201,222%20Z'%20fill='%23e0501c'/%3E%3Cpath%20d='M109,176%20L96,233%20L144,197%20Z'%20fill='%23b9400e'/%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="logo" href="index.html" aria-label="LaunchDraft home">
+        <img class="logo__mark" src="launchdraft_logo.svg" alt="" width="30" height="30" />
+        <span>Launch<b>Draft</b></span>
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navmenu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__menu" id="navmenu" aria-label="Primary">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="index.html#how">How it works</a>
+        <a class="link" href="pricing.html" aria-current="page">Pricing</a>
+        <a class="btn btn-primary" href="start.html">Start your draft <span class="arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="blueprint" aria-hidden="true"></div>
+      <div class="wrap">
+        <span class="overline reveal">Pricing</span>
+        <h1 class="reveal" style="--i:1; margin-top: var(--space-2xs);">Simple monthly plans. Pick the one that fits.</h1>
+        <p class="reveal" style="--i:2">A one-time setup gets you designed, built, and launched. After that, one flat monthly rate covers hosting, security, and the edits you send us.</p>
+      </div>
+    </section>
+
+    <!-- Plans -->
+    <section class="section" style="padding-top: var(--space-l);" id="plans">
+      <div class="wrap">
+        <div class="plans">
+          <!-- Standard -->
+          <article class="plan reveal">
+            <span class="plan__tag">Standard</span>
+            <h2 class="plan__name">The Everyday Business</h2>
+            <p class="plan__desc">For local businesses like landscapers, plumbers, and bakeries that need a clean, professional presence.</p>
+            <div class="plan__price"><b>$25 to $35</b><span>/ month</span></div>
+            <p class="plan__setup">+ $200 to $300 one-time setup</p>
+            <ul class="plan__feat">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Up to 3 to 5 core pages (Home, About, Services, Contact)</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Secure hosting and a free custom domain</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Basic monthly edits (address, holiday hours)</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Mobile-friendly setup</span></li>
+            </ul>
+            <a class="btn btn-ghost" href="start.html?plan=standard">Choose Standard</a>
+          </article>
+
+          <!-- Professional -->
+          <article class="plan plan--featured reveal" style="--i:1">
+            <span class="plan__badge">Most popular</span>
+            <span class="plan__tag">Professional</span>
+            <h2 class="plan__name">The Growth Focus</h2>
+            <p class="plan__desc">For businesses generating leads or booking online, like real estate agents, photographers, and salons.</p>
+            <div class="plan__price"><b>$50 to $75</b><span>/ month</span></div>
+            <p class="plan__setup">+ around $400 one-time setup</p>
+            <ul class="plan__feat">
+              <li class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Everything in Standard</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>More pages, up to 10</span></li>
+              <li class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Online booking, review widgets, and blog setup</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Faster turnarounds on monthly edits</span></li>
+            </ul>
+            <a class="btn btn-ghost" href="start.html?plan=professional">Choose Professional</a>
+          </article>
+
+          <!-- Enterprise -->
+          <article class="plan reveal" style="--i:2">
+            <span class="plan__tag">Enterprise</span>
+            <h2 class="plan__name">The Custom Solution</h2>
+            <p class="plan__desc">For online stores selling products, or larger businesses needing custom client portals.</p>
+            <div class="plan__price"><b>$100+</b><span>/ month</span></div>
+            <p class="plan__setup">+ $600+ premium setup</p>
+            <ul class="plan__feat">
+              <li class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Everything in Professional</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Unlimited pages and a full product catalog</span></li>
+              <li class="hi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Online store, inventory, and performance reports</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg><span>Priority tech support. You are first in line.</span></li>
+            </ul>
+            <a class="btn btn-ghost" href="start.html?plan=enterprise">Choose Enterprise</a>
+          </article>
+        </div>
+        <p class="plans__note">Not sure which fits? Tell us about your business and we'll recommend the right plan. No pressure.</p>
+      </div>
+    </section>
+
+    <!-- What every plan includes -->
+    <section class="section section--ink">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="overline">Every plan includes</span>
+          <h2>The essentials, on the house.</h2>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <div class="step__num">A</div>
+            <h3>Free custom domain</h3>
+            <p>Your own web address (yourbusiness.com), set up and connected for you at no extra cost.</p>
+          </article>
+          <article class="step reveal" style="--i:1">
+            <div class="step__num">B</div>
+            <h3>Secure, fast hosting</h3>
+            <p>HTTPS security and quick load times on reliable servers, handled entirely on our side.</p>
+          </article>
+          <article class="step reveal" style="--i:2">
+            <div class="step__num">C</div>
+            <h3>Edits you just ask for</h3>
+            <p>Send a message when something changes. No dashboards, no logins, no learning curve.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="overline">Questions</span>
+          <h2>The things people ask before they start.</h2>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <h3>Do I need to know anything technical?</h3>
+            <p>Not a thing. You describe your business, and we handle the design, build, hosting, and every edit after launch.</p>
+          </article>
+          <article class="feature reveal" style="--i:1">
+            <h3>Who owns the domain?</h3>
+            <p>You do. The custom domain represents your business and stays yours. We just set it up and keep it running.</p>
+          </article>
+          <article class="feature reveal">
+            <h3>What does the setup fee cover?</h3>
+            <p>The one-time design and build: copywriting, layout, your pages, and getting everything live. The monthly fee then covers hosting and ongoing edits.</p>
+          </article>
+          <article class="feature reveal" style="--i:1">
+            <h3>Can I upgrade later?</h3>
+            <p>Absolutely. Start on Standard and move up to Professional or Enterprise as you grow. Your site comes with you.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-band">
+      <div class="wrap reveal">
+        <h2>Found your plan?</h2>
+        <p>Start a draft and we'll send back a first look at your site, usually within a few days.</p>
+        <a class="btn btn-primary" href="start.html">Start your draft <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" aria-label="LaunchDraft home">
+            <img class="logo__mark" src="launchdraft_logo.svg" alt="" width="30" height="30" />
+            <span>Launch<b style="color:var(--accent-tint)">Draft</b></span>
+          </a>
+          <p class="footer__tag">Websites built, hosted, and looked after for local businesses. From draft to launch.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#how">How it works</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="start.html">Start a draft</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Plans</h4>
+          <ul>
+            <li><a href="pricing.html">Standard</a></li>
+            <li><a href="pricing.html">Professional</a></li>
+            <li><a href="pricing.html">Enterprise</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="start.html">Start a draft</a></li>
+            <li><a href="mailto:hello@launchdraft.net">hello@launchdraft.net</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span id="year">2026</span> LaunchDraft. From Draft to Launch.</span>
+        <span>Fast, secure hosting. Looked after for you.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

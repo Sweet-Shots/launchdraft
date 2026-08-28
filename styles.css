@@ -434,3 +434,219 @@ a { color: inherit; text-decoration: none; }
   .footer__grid { grid-template-columns: 1fr; }
   .word-draft { -webkit-text-stroke-width: 1.4px; }
 }
+
+/* =========================================================
+   Additions: cursor, marquee, mobile nav, load-in, forms
+   ========================================================= */
+
+/* ---------- Custom cursor ---------- */
+.cursor-dot, .cursor-ring {
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 999;
+  border-radius: 50%;
+  opacity: 0; transition: opacity .25s ease;
+}
+.cursor-dot {
+  width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px;
+  background: var(--accent);
+}
+.cursor-ring {
+  width: 34px; height: 34px; margin: -17px 0 0 -17px;
+  border: 1.5px solid var(--ink);
+  transition: opacity .25s ease, width .2s ease, height .2s ease, margin .2s ease, background .2s ease, border-color .2s ease;
+}
+body.cursor-active .cursor-dot, body.cursor-active .cursor-ring { opacity: 1; }
+.cursor-ring.is-hover {
+  width: 52px; height: 52px; margin: -26px 0 0 -26px;
+  background: rgba(224,80,28,.12);
+  border-color: var(--accent);
+}
+.cursor-ring.is-down { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
+body.cursor-on { cursor: none; }
+body.cursor-on a, body.cursor-on button, body.cursor-on .nav__toggle { cursor: none; }
+body.cursor-on input, body.cursor-on textarea, body.cursor-on select { cursor: text; }
+
+/* ---------- Load-in (hero rises, staggered via --i) ---------- */
+.reveal { transition-delay: calc(var(--i, 0) * 70ms); }
+
+/* ---------- Sliding slogan bar (between hero and process) ---------- */
+.marquee {
+  background: var(--accent);
+  color: var(--ink);
+  overflow: hidden;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding-block: .7rem;
+  display: flex;
+}
+.marquee__track {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 26s linear infinite;
+}
+.marquee__track span {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.1rem, 1.4vw + .8rem, 1.9rem);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  padding-inline: 1.2rem;
+  display: inline-flex; align-items: center; gap: 1.2rem;
+}
+.marquee__track svg { width: 1em; height: 1em; flex: none; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (hover: hover) { .marquee:hover .marquee__track { animation-play-state: paused; } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; transform: none; }
+}
+
+/* ---------- Nav menu + hamburger (new structure) ---------- */
+.nav__menu { display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem); }
+.nav__menu a.link {
+  font-weight: 600; font-size: var(--text-sm); letter-spacing: 0.01em;
+  position: relative; padding-block: 4px;
+}
+.nav__menu a.link::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px;
+  background: var(--accent); transform: scaleX(0); transform-origin: right;
+  transition: transform .28s ease;
+}
+.nav__menu a.link[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
+@media (hover: hover) { .nav__menu a.link:hover::after { transform: scaleX(1); transform-origin: left; } }
+
+.nav__toggle {
+  display: none;
+  width: 44px; height: 44px;
+  border: none; background: transparent; padding: 10px;
+  flex-direction: column; justify-content: center; gap: 5px;
+}
+.nav__toggle span {
+  display: block; height: 2px; width: 100%; background: var(--ink);
+  border-radius: 2px; transition: transform .3s ease, opacity .2s ease;
+}
+body.menu-open .nav__toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+body.menu-open .nav__toggle span:nth-child(2) { opacity: 0; }
+body.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 820px) {
+  /* Drop the blur on mobile: backdrop-filter creates a containing block
+     that would trap the fixed menu panel inside the nav bar's height. */
+  .nav { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--bg); }
+  .nav__toggle { display: flex; z-index: 60; }
+  .nav__menu {
+    position: fixed; inset: 0 0 0 auto; z-index: 55;
+    width: min(80vw, 320px);
+    flex-direction: column; align-items: flex-start; justify-content: flex-start;
+    gap: var(--space-m);
+    padding: 5.75rem var(--space-l) var(--space-2xl);
+    background: var(--bg);
+    border-left: 2px solid var(--ink);
+    transform: translateX(100%);
+    transition: transform .34s cubic-bezier(.4,0,.2,1);
+    box-shadow: -30px 0 60px -30px rgba(23,34,59,.4);
+  }
+  body.menu-open .nav__menu { transform: translateX(0); }
+  .nav__menu a.link { font-size: var(--text-lg); font-weight: 700; }
+  .nav__menu .btn { width: 100%; justify-content: center; margin-top: var(--space-2xs); }
+  body.menu-open::after {
+    content: ""; position: fixed; inset: 0; z-index: 40;
+    background: rgba(23,34,59,.32); backdrop-filter: blur(2px);
+  }
+}
+
+/* ---------- Page hero (interior pages) ---------- */
+.page-hero {
+  position: relative; overflow: hidden;
+  padding-top: var(--space-2xl); padding-bottom: var(--space-xl);
+}
+.page-hero .wrap { position: relative; z-index: 1; }
+.page-hero h1 { font-size: var(--text-3xl); max-width: 18ch; }
+.page-hero p { font-size: var(--text-lg); color: var(--ink-soft); max-width: 52ch; margin-top: var(--space-s); }
+
+/* ---------- Forms (Start a draft) ---------- */
+.form-wrap { max-width: 46rem; }
+.form { display: grid; gap: var(--space-m); }
+.form__row { display: grid; gap: var(--space-m); grid-template-columns: 1fr 1fr; }
+.field { display: grid; gap: .5rem; }
+.field > label { font-weight: 700; font-size: var(--text-sm); }
+.field .hint { font-size: var(--text-sm); color: var(--muted); }
+.field input, .field textarea, .field select {
+  font: inherit; color: var(--ink);
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: .8em 1em;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.field textarea { min-height: 8rem; resize: vertical; }
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(224,80,28,.14);
+}
+.field input::placeholder, .field textarea::placeholder { color: #b6ada1; }
+
+/* Plan chooser (radio cards) */
+.plan-picker { display: grid; gap: var(--space-s); grid-template-columns: repeat(3, 1fr); }
+.plan-opt { position: relative; }
+.plan-opt input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.plan-opt label {
+  display: block; height: 100%;
+  border: 1.5px solid var(--line); border-radius: 14px;
+  padding: var(--space-s); background: var(--paper);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.plan-opt label b { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-size: var(--text-lg); }
+.plan-opt label small { color: var(--muted); font-size: var(--text-sm); }
+.plan-opt input:checked + label {
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(224,80,28,.14); transform: translateY(-2px);
+}
+.plan-opt input:focus-visible + label { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.form__submit { display: flex; align-items: center; gap: var(--space-m); flex-wrap: wrap; }
+.form__note { font-size: var(--text-sm); color: var(--muted); }
+.form-success {
+  display: none; align-items: flex-start; gap: .8rem;
+  background: var(--surface); border: 1.5px solid var(--line);
+  border-radius: 14px; padding: var(--space-m);
+}
+.form-success.show { display: flex; }
+.form-success svg { width: 26px; height: 26px; color: var(--accent); flex: none; }
+
+@media (max-width: 640px) {
+  .form__row { grid-template-columns: 1fr; }
+  .plan-picker { grid-template-columns: 1fr; }
+}
+
+/* ---------- Plans at a glance (home teaser) ---------- */
+.glance { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-m); align-items: stretch; }
+.glance__card {
+  display: flex; flex-direction: column; gap: .5rem;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: var(--space-l);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+@media (hover: hover) {
+  .glance__card:hover { transform: translateY(-4px); border-color: var(--ink); box-shadow: 0 22px 44px -28px rgba(23,34,59,.4); }
+  .glance__card:hover .glance__go span { transform: translateX(4px); }
+}
+.glance__card--featured { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.glance__badge {
+  align-self: flex-start; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; background: var(--accent); color: #fff;
+  padding: .35em .8em; border-radius: 999px; margin-bottom: .2rem;
+}
+.glance__tag { font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent-ink); }
+.glance__card--featured .glance__tag { color: var(--accent-tint); }
+.glance__name { font-family: 'Bricolage Grotesque', sans-serif; font-size: var(--text-lg); font-weight: 700; letter-spacing: -0.02em; }
+.glance__price { font-family: 'Bricolage Grotesque', sans-serif; font-size: var(--text-2xl); letter-spacing: -0.03em; line-height: 1; margin-top: .2rem; }
+.glance__price small { font-family: 'Hanken Grotesk', sans-serif; font-size: var(--text-sm); font-weight: 500; color: var(--muted); margin-left: .3rem; }
+.glance__card--featured .glance__price small { color: rgba(250,246,240,.6); }
+.glance__line { color: var(--ink-soft); font-size: var(--text-base); margin-top: .2rem; }
+.glance__card--featured .glance__line { color: rgba(250,246,240,.75); }
+.glance__go { margin-top: auto; padding-top: var(--space-s); font-weight: 700; font-size: var(--text-sm); color: var(--accent-ink); display: inline-flex; align-items: center; gap: .4rem; }
+.glance__card--featured .glance__go { color: var(--accent-tint); }
+.glance__go span { transition: transform .2s ease; }
+@media (max-width: 900px) { .glance { grid-template-columns: 1fr; } }
