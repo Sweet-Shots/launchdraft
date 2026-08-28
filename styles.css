@@ -650,3 +650,6 @@ body.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rota
 .glance__card--featured .glance__go { color: var(--accent-tint); }
 .glance__go span { transition: transform .2s ease; }
 @media (max-width: 900px) { .glance { grid-template-columns: 1fr; } }
+
+/* Offset anchored sections so the sticky nav doesn't cover their headings */
+.section, .page-hero, [id] { scroll-margin-top: 5rem; }
