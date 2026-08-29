@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js');window.addEventListener('load',function(){setTimeout(function(){if(!window.__revealReady){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}},1000);});</script>
   <title>LaunchDraft · Start a Draft</title>
   <meta name="description" content="Tell us about your business and we'll send back a first draft of your website, usually within a few days." />
 
@@ -19,15 +20,15 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LaunchDraft" />
-  <meta property="og:title" content="Start a Draft — LaunchDraft" />
+  <meta property="og:title" content="LaunchDraft · Start a Draft" />
   <meta property="og:description" content="Tell us about your business and we'll send back a first draft of your website, usually within a few days." />
   <meta property="og:url" content="https://launchdraft.net/start.html" />
   <meta property="og:image" content="https://launchdraft.net/assets/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="LaunchDraft — From Draft to Launch" />
+  <meta property="og:image:alt" content="LaunchDraft · From Draft to Launch" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Start a Draft — LaunchDraft" />
+  <meta name="twitter:title" content="LaunchDraft · Start a Draft" />
   <meta name="twitter:description" content="Tell us about your business and we'll send back a first draft, usually within a few days." />
   <meta name="twitter:image" content="https://launchdraft.net/assets/og.png" />
 
@@ -47,6 +48,7 @@
       <nav class="nav__menu" id="navmenu" aria-label="Primary">
         <a class="link" href="index.html">Home</a>
         <a class="link" href="index.html#how">How it works</a>
+        <a class="link" href="index.html#work">Examples</a>
         <a class="link" href="pricing.html">Pricing</a>
         <a class="link" href="pricing.html#faq">FAQ</a>
         <a class="btn btn-primary" href="start.html" aria-current="page">Start your draft <span class="arrow" aria-hidden="true">→</span></a>
@@ -107,8 +109,8 @@
             </div>
           </div>
 
-          <div class="field">
-            <label>Which plan are you leaning toward?</label>
+          <fieldset class="field field--fieldset">
+            <legend>Which plan are you leaning toward?</legend>
             <div class="plan-picker">
               <div class="plan-opt">
                 <input type="radio" id="plan-standard" name="plan" value="Standard" />
@@ -124,7 +126,7 @@
               </div>
             </div>
             <span class="hint">Not sure? Pick your best guess. We'll help you choose.</span>
-          </div>
+          </fieldset>
 
           <div class="field">
             <label for="about">Tell us about your business</label>
@@ -161,6 +163,8 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#work">Examples</a></li>
+            <li><a href="index.html#about">About</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="pricing.html#faq">FAQ</a></li>
             <li><a href="start.html">Start a draft</a></li>
@@ -207,6 +211,8 @@
           if (!form.reportValidity()) return;
           form.style.display = 'none';
           success.classList.add('show', 'in');
+          success.setAttribute('tabindex', '-1');
+          success.focus({ preventScroll: true });
           success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
       }

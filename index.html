@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LaunchDraft</title>
-  <meta name="description" content="LaunchDraft builds, hosts, and looks after professional websites for local businesses. You run the shop. We run the site." />
+  <!-- Marks that JS is running so content can hide for the reveal animation;
+       without JS (blocked/failed) nothing is hidden and the page stays readable.
+       Failsafe: if main.js never wires up reveals, show everything anyway. -->
+  <script>document.documentElement.classList.add('js');window.addEventListener('load',function(){setTimeout(function(){if(!window.__revealReady){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}},1000);});</script>
+  <title>LaunchDraft · Websites for local business</title>
+  <meta name="description" content="LaunchDraft designs, builds, hosts, and looks after professional websites for local businesses. You run the shop. We run the site. Plans from $25/month." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,17 +26,36 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="LaunchDraft" />
-  <meta property="og:title" content="LaunchDraft — From Draft to Launch" />
+  <meta property="og:title" content="LaunchDraft · From Draft to Launch" />
   <meta property="og:description" content="We design, build, and host a clean, professional website for your local business, then keep it up to date every month." />
   <meta property="og:url" content="https://launchdraft.net/" />
   <meta property="og:image" content="https://launchdraft.net/assets/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="LaunchDraft — From Draft to Launch" />
+  <meta property="og:image:alt" content="LaunchDraft · From Draft to Launch" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="LaunchDraft — From Draft to Launch" />
+  <meta name="twitter:title" content="LaunchDraft · From Draft to Launch" />
   <meta name="twitter:description" content="Websites built, hosted, and looked after for local businesses." />
   <meta name="twitter:image" content="https://launchdraft.net/assets/og.png" />
+
+  <!-- Structured data: helps Google understand the business and its plans -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "LaunchDraft",
+    "description": "LaunchDraft designs, builds, hosts, and maintains professional websites for local businesses.",
+    "url": "https://launchdraft.net/",
+    "slogan": "From Draft to Launch",
+    "areaServed": "United States",
+    "serviceType": "Website design, hosting, and maintenance for local businesses",
+    "offers": [
+      { "@type": "Offer", "name": "Standard", "priceCurrency": "USD", "price": "25", "description": "A clean, professional 3-to-5 page website with hosting, a free custom domain, and monthly edits." },
+      { "@type": "Offer", "name": "Professional", "priceCurrency": "USD", "price": "49", "description": "Up to 10 pages with online booking, review widgets, and a blog for businesses generating leads." },
+      { "@type": "Offer", "name": "Enterprise", "priceCurrency": "USD", "price": "99", "description": "Unlimited pages with an online store, inventory, and performance reports for e-commerce." }
+    ]
+  }
+  </script>
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -51,6 +74,7 @@
       <nav class="nav__menu" id="navmenu" aria-label="Primary">
         <a class="link" href="index.html" aria-current="page">Home</a>
         <a class="link" href="index.html#how">How it works</a>
+        <a class="link" href="index.html#work">Examples</a>
         <a class="link" href="pricing.html">Pricing</a>
         <a class="link" href="pricing.html#faq">FAQ</a>
         <a class="btn btn-primary" href="start.html">Start your draft <span class="arrow" aria-hidden="true">→</span></a>
@@ -144,7 +168,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
             </div>
             <h3>Mobile-friendly by default</h3>
-            <p>More than half your customers arrive on a phone. Every site looks sharp on phones, tablets, and desktops without lifting a finger.</p>
+            <p>Most people will find you on their phone. Every site looks sharp on phones, tablets, and desktops without lifting a finger.</p>
           </article>
           <article class="feature reveal" style="--i:1">
             <div class="feature__icon" aria-hidden="true">
@@ -205,6 +229,75 @@
       </div>
     </section>
 
+    <!-- ============ EXAMPLES / WORK ============ -->
+    <!-- PLACEHOLDERS: swap these three for real client sites (screenshot + name)
+         once you have them. Keep the .work__frame markup or drop in an <img>. -->
+    <section class="section grid-left" id="work">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="overline">Recent work</span>
+          <h2>The kind of sites we build.</h2>
+          <p>Clean, focused websites made for local businesses. Real client work will appear here as projects launch.</p>
+        </div>
+        <div class="work">
+          <article class="work__card reveal">
+            <div class="work__frame" aria-hidden="true">
+              <span class="work__dots"><i></i><i></i><i></i></span>
+              <div class="work__shot"><span>Landscaper</span></div>
+            </div>
+            <h3>A tidy site for a trade</h3>
+            <p>Services, a photo gallery, and a quote form. <em>Sample slot — replace with a real project.</em></p>
+          </article>
+          <article class="work__card reveal" style="--i:1">
+            <div class="work__frame" aria-hidden="true">
+              <span class="work__dots"><i></i><i></i><i></i></span>
+              <div class="work__shot"><span>Bakery</span></div>
+            </div>
+            <h3>A menu that makes people hungry</h3>
+            <p>Hours, location, and an online menu. <em>Sample slot — replace with a real project.</em></p>
+          </article>
+          <article class="work__card reveal" style="--i:2">
+            <div class="work__frame" aria-hidden="true">
+              <span class="work__dots"><i></i><i></i><i></i></span>
+              <div class="work__shot"><span>Salon</span></div>
+            </div>
+            <h3>Booked out from the homepage</h3>
+            <p>Services, reviews, and online booking. <em>Sample slot — replace with a real project.</em></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <!-- PLACEHOLDERS: replace with real quotes as clients launch, then remove
+         the .quote__tag "Sample" chips. Don't publish invented reviews. -->
+    <section class="section section--ink grid-right" id="reviews">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="overline">In their words</span>
+          <h2>What owners say.</h2>
+          <p>We're just getting started. Real quotes from clients will replace these samples as sites go live.</p>
+        </div>
+        <div class="quotes">
+          <figure class="quote reveal">
+            <span class="quote__tag">Sample</span>
+            <blockquote>"One specific sentence about what changed for their business after launch goes right here."</blockquote>
+            <figcaption><b>First &amp; last name</b><span>Business type, City</span></figcaption>
+          </figure>
+          <figure class="quote reveal" style="--i:1">
+            <span class="quote__tag">Sample</span>
+            <blockquote>"A short, honest quote about how easy it was to work with you and the result they got."</blockquote>
+            <figcaption><b>First &amp; last name</b><span>Business type, City</span></figcaption>
+          </figure>
+          <figure class="quote reveal" style="--i:2">
+            <span class="quote__tag">Sample</span>
+            <blockquote>"A line about the monthly edits or support that made their life easier belongs here."</blockquote>
+            <figcaption><b>First &amp; last name</b><span>Business type, City</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ PLANS AT A GLANCE ============ -->
     <section class="section" id="plans-glance">
       <div class="wrap">
@@ -240,12 +333,32 @@
       </div>
     </section>
 
+    <!-- ============ ABOUT / FOUNDER ============ -->
+    <!-- PLACEHOLDER: write your real story and name here, and swap the initials
+         avatar for a photo when you have one. -->
+    <section class="section section--surface grid-left" id="about">
+      <div class="wrap">
+        <div class="about">
+          <div class="about__media reveal" aria-hidden="true">
+            <div class="about__avatar">LD</div>
+          </div>
+          <div class="about__body reveal" style="--i:1">
+            <span class="overline">Who's behind it</span>
+            <h2>A real person, not a faceless agency.</h2>
+            <p><em>Placeholder — make this yours.</em> Hi, I'm <b>[Your Name]</b>, the founder of LaunchDraft. I started it because local businesses deserve a professional website without the hassle or the agency price tag. When you message us, you're talking to me, not a ticket queue.</p>
+            <a class="btn btn-ghost" href="start.html">Start your draft <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ CTA ============ -->
     <section class="section cta-band grid-right" id="contact">
       <div class="wrap reveal">
         <h2>Ready to go from draft to launch?</h2>
         <p>Tell us about your business and we'll send back a first draft you can actually see, usually within a few days.</p>
         <a class="btn btn-primary" href="start.html">Start your draft <span class="arrow" aria-hidden="true">→</span></a>
+        <p class="cta-guarantee"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Free first draft. You don't pay a cent until you love it.</p>
       </div>
     </section>
 
@@ -267,6 +380,8 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#work">Examples</a></li>
+            <li><a href="index.html#about">About</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="pricing.html#faq">FAQ</a></li>
             <li><a href="start.html">Start a draft</a></li>

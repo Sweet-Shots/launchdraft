@@ -44,11 +44,8 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     revealEls.forEach(function (el) { io.observe(el); });
   }
-
-  /* ---- Page load-in (hero rises) ---- */
-  requestAnimationFrame(function () {
-    requestAnimationFrame(function () { document.body.classList.add('loaded'); });
-  });
+  // Tell the in-head failsafe that reveals are wired up (so it won't force-show).
+  window.__revealReady = true;
 
   /* ---- Current year ---- */
   var year = document.getElementById('year');
