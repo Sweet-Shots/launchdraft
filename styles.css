@@ -782,3 +782,8 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
   margin-top: var(--space-m); font-weight: 600; font-size: var(--text-sm); color: #fff;
 }
 .cta-guarantee svg { width: 18px; height: 18px; flex: none; }
+
+/* Examples cards now link to live demos with real screenshots */
+.work__shot-img { display: block; width: 100%; height: auto; aspect-ratio: 13 / 9; object-fit: cover; object-position: top center; }
+.work__view { color: var(--accent-ink); font-weight: 700; white-space: nowrap; }
+@media (hover: hover) { .work__card:hover .work__view { text-decoration: underline; } }

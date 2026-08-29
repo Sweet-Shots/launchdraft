@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumière Hair Studio — Modern salon</title>
+<meta name="description" content="Demo site by LaunchDraft. Lumière Hair Studio: cuts, color, and styling by a friendly, expert team." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%231d1a20'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23c9a36b' stroke-width='2'/%3E%3C/svg%3E">
+<style>
+  :root{ --ink:#1d1a20; --ink-2:#2c2731; --ivory:#f6f1ea; --paper:#fffdfa; --gold:#c9a36b; --rose:#c98a86; --muted:#7c7480; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ivory);color:var(--ink);font-family:'Jost',system-ui,sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.05;margin:0;letter-spacing:.005em}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:70rem;margin-inline:auto;padding-inline:1.5rem}
+  .demobar{background:var(--ink);color:#efe7db;font-size:.82rem;letter-spacing:.02em;text-align:center;padding:.5rem 1rem}
+  .demobar a{color:var(--gold);font-weight:600;text-decoration:underline}
+  header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--ivory) 90%,transparent);backdrop-filter:blur(8px)}
+  .nav__in{display:flex;align-items:center;justify-content:space-between;padding-block:1.1rem}
+  .brand{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+  .nav__links{display:flex;gap:1.8rem;align-items:center}
+  .nav__links a{font-weight:400;font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--ink);color:var(--ivory);font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;font-weight:500;padding:.9em 1.6em;border-radius:2px;border:1px solid var(--ink);transition:.2s}
+  .btn:hover{background:transparent;color:var(--ink)}
+  .btn--gold{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+  .btn--gold:hover{background:transparent;color:var(--ink)}
+  .btn--ghost{background:transparent;color:inherit;border-color:currentColor}
+  @media(max-width:680px){.nav__links a:not(.btn){display:none}}
+
+  .hero{background:linear-gradient(180deg,#211d26,#332c3a);color:var(--ivory);position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;right:-10%;top:-20%;width:60%;height:140%;background:radial-gradient(closest-side,rgba(201,163,107,.28),transparent);pointer-events:none}
+  .hero .wrap{position:relative;text-align:center;padding-block:clamp(4rem,10vw,7.5rem)}
+  .hero .eyebrow{text-transform:uppercase;letter-spacing:.35em;font-size:.72rem;color:var(--gold)}
+  .hero h1{font-size:clamp(3rem,9vw,6rem);margin:1rem 0;color:#fff;font-weight:500}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero p{max-width:44ch;margin:0 auto;color:#d9d2df;font-size:1.15rem}
+  .hero__actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+
+  section{padding-block:clamp(3rem,7vw,5.5rem)}
+  .head{text-align:center;max-width:40rem;margin:0 auto 2.4rem}
+  .head .eyebrow{text-transform:uppercase;letter-spacing:.3em;font-size:.72rem;color:var(--gold)}
+  .head h2{font-size:clamp(2.4rem,5vw,3.6rem);margin-top:.5rem}
+  .head p{color:var(--muted);font-size:1.05rem}
+
+  .prices{display:grid;grid-template-columns:1fr 1fr;gap:0 3rem;max-width:52rem;margin-inline:auto}
+  .price-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1rem 0;border-bottom:1px solid #e3dace}
+  .price-row h3{font-size:1.5rem;font-weight:600}
+  .price-row .sub{display:block;font-family:'Jost',sans-serif;font-size:.85rem;color:var(--muted);text-transform:none;letter-spacing:0}
+  .price-row .amt{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);white-space:nowrap}
+  @media(max-width:680px){.prices{grid-template-columns:1fr;gap:0}}
+
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .stylist{text-align:center}
+  .stylist .ph{aspect-ratio:3/4;border-radius:4px;margin-bottom:.9rem;box-shadow:0 24px 44px -34px rgba(29,26,32,.6)}
+  .stylist:nth-child(1) .ph{background:linear-gradient(160deg,#4a4152,#c9a36b)}
+  .stylist:nth-child(2) .ph{background:linear-gradient(160deg,#5a4a4a,#c98a86)}
+  .stylist:nth-child(3) .ph{background:linear-gradient(160deg,#3c3944,#8f8598)}
+  .stylist h3{font-size:1.6rem}
+  .stylist span{color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:.75rem}
+  @media(max-width:720px){.team{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.team{grid-template-columns:1fr}}
+
+  .band{background:var(--ink);color:var(--ivory);text-align:center}
+  .band .stars{color:var(--gold);letter-spacing:.3em;font-size:1.2rem}
+  .band blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-style:italic;max-width:44rem;margin:1rem auto 0;color:#fff;line-height:1.3}
+  .band figcaption{margin-top:1rem;text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;color:var(--gold)}
+
+  .cta{text-align:center;background:var(--paper);border:1px solid #e3dace;border-radius:6px;padding:clamp(2.6rem,5vw,4rem)}
+  .cta h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+  .cta p{color:var(--muted);max-width:34ch;margin:.6rem auto 1.6rem}
+
+  footer{background:var(--ink);color:#b7afbe;padding-block:2.6rem;margin-top:3rem}
+  footer .grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between}
+  footer .brand{color:#fff}
+  footer small{display:block;margin-top:1.5rem;color:#7a7280}
+</style>
+</head>
+<body>
+  <div class="demobar">✦ This is a demo site built by <a href="../index.html">LaunchDraft</a> — see what we can build for your business.</div>
+
+  <header class="nav"><div class="wrap nav__in">
+    <a class="brand" href="#top">Lumière</a>
+    <nav class="nav__links">
+      <a href="#services">Services</a>
+      <a href="#team">Team</a>
+      <a href="#book">Visit</a>
+      <a class="btn btn--gold" href="#book">Book now</a>
+    </nav>
+  </div></header>
+
+  <main id="top">
+    <section class="hero"><div class="wrap">
+      <span class="eyebrow">Modern hair studio</span>
+      <h1>Hair that <em>turns heads</em>.</h1>
+      <p>Precision cuts, dimensional color, and styling by a team that actually listens. Walk out feeling like the best version of you.</p>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="#book">Book an appointment</a>
+        <a class="btn btn--ghost" href="#services" style="color:#fff">View services</a>
+      </div>
+    </div></section>
+
+    <section id="services"><div class="wrap">
+      <div class="head"><span class="eyebrow">The menu</span><h2>Services &amp; pricing</h2><p>Consultation included with every appointment.</p></div>
+      <div class="prices">
+        <div class="price-row"><h3>Women's cut<span class="sub">Cut, wash &amp; style</span></h3><span class="amt">$65</span></div>
+        <div class="price-row"><h3>Men's cut<span class="sub">Cut &amp; finish</span></h3><span class="amt">$40</span></div>
+        <div class="price-row"><h3>Full color<span class="sub">Single-process</span></h3><span class="amt">$95+</span></div>
+        <div class="price-row"><h3>Balayage<span class="sub">Hand-painted highlights</span></h3><span class="amt">$160+</span></div>
+        <div class="price-row"><h3>Blowout<span class="sub">Wash &amp; style</span></h3><span class="amt">$45</span></div>
+        <div class="price-row"><h3>Special occasion<span class="sub">Updos &amp; events</span></h3><span class="amt">$85+</span></div>
+      </div>
+    </div></section>
+
+    <section id="team"><div class="wrap">
+      <div class="head"><span class="eyebrow">Meet the stylists</span><h2>The people behind the chair.</h2></div>
+      <div class="team">
+        <div class="stylist"><div class="ph"></div><h3>Mara</h3><span>Color specialist</span></div>
+        <div class="stylist"><div class="ph"></div><h3>Devon</h3><span>Cuts &amp; styling</span></div>
+        <div class="stylist"><div class="ph"></div><h3>Priya</h3><span>Balayage &amp; extensions</span></div>
+      </div>
+    </div></section>
+
+    <section class="band"><div class="wrap">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Best color I've ever had. They listened, took their time, and I've had compliments every day since."</blockquote>
+      <figcaption>— Jordan T.</figcaption>
+    </div></section>
+
+    <section id="book"><div class="wrap">
+      <div class="cta">
+        <h2>Ready for a fresh look?</h2>
+        <p>Book online in under a minute, or call and we'll find your time.</p>
+        <a class="btn btn--gold" href="mailto:hello@lumiere.example">Book an appointment</a>
+        <p style="margin-top:1.4rem;font-size:.9rem">21 Rose Lane · (555) 010-3344 · Tue–Sat</p>
+      </div>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap">
+    <div class="grid">
+      <div><span class="brand" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;letter-spacing:.14em;text-transform:uppercase">Lumière</span><p style="max-width:24ch;margin-top:.5rem">A modern hair studio for cuts, color, and styling.</p></div>
+      <div><strong style="color:#fff">Hours</strong><br>Tue–Sat, 9am–7pm</div>
+      <div><strong style="color:#fff">Visit</strong><br>21 Rose Lane<br>(555) 010-3344</div>
+    </div>
+    <small>Demo site by <a href="../index.html" style="color:#c9a36b;text-decoration:underline">LaunchDraft</a>. Lumière Hair Studio is a fictional business for demonstration.</small>
+  </div></footer>
+</body>
+</html>
