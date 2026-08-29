@@ -136,6 +136,9 @@ a { color: inherit; text-decoration: none; }
   transition: border-color .3s ease, background .3s ease;
 }
 .nav.scrolled { border-color: var(--line); }
+/* Top bar spans the full width with comfortable side padding instead of the
+   narrower centered content column, so it doesn't look inset on wide screens. */
+.nav > .wrap { max-width: none; padding-inline: clamp(1.25rem, 3.5vw, 3.25rem); }
 .nav__inner {
   display: flex;
   align-items: center;
@@ -452,14 +455,16 @@ a { color: inherit; text-decoration: none; }
 }
 .cursor-ring {
   width: 34px; height: 34px; margin: -17px 0 0 -17px;
-  border: 1.5px solid var(--ink);
-  transition: opacity .25s ease, width .2s ease, height .2s ease, margin .2s ease, background .2s ease, border-color .2s ease;
+  border: 1.6px solid #fff;
+  /* Difference blend renders the ring as the inverse of whatever is behind it,
+     so it stays visible on any background color. The orange dot is unaffected. */
+  mix-blend-mode: difference;
+  transition: opacity .25s ease, width .2s ease, height .2s ease, margin .2s ease, background .2s ease;
 }
 body.cursor-active .cursor-dot, body.cursor-active .cursor-ring { opacity: 1; }
 .cursor-ring.is-hover {
   width: 52px; height: 52px; margin: -26px 0 0 -26px;
-  background: rgba(224,80,28,.12);
-  border-color: var(--accent);
+  background: transparent;
 }
 .cursor-ring.is-down { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
 body.cursor-on { cursor: none; }
