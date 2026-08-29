@@ -615,7 +615,9 @@ body.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rota
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 @media (hover: hover) {
-  .glance__card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 20px 42px -28px rgba(224,80,28,.35); }
+  .glance__card:hover { transform: translateY(-4px); box-shadow: 0 20px 42px -28px rgba(23,34,59,.32); }
+  /* Only the "Most popular" card gets the orange edge — a touch more presence */
+  .glance__card--featured:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(224,80,28,.4), 0 24px 48px -26px rgba(224,80,28,.42); }
   .glance__card:hover .glance__go span { transform: translateX(4px); }
 }
 .glance__card--featured { background: var(--ink); color: var(--bg); border-color: var(--ink); }
