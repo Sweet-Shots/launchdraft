@@ -10,8 +10,8 @@ Static multi-page site, ready to deploy on **GitHub Pages**.
 | File | Purpose |
 |------|---------|
 | `index.html` | Home (hero, sliding slogan bar, process, what's included, why-not-DIY, examples, testimonials, pricing teaser, about, CTA) |
-| `pricing.html` | Full pricing (3 plans), "every plan includes", FAQ, CTA |
-| `start.html` | "Start a draft" intake form (with client-side confirmation) |
+| `pricing/index.html` | Full pricing (3 plans), "every plan includes", FAQ, CTA |
+| `start/index.html` | "Start a draft" intake form (with client-side confirmation) |
 | `404.html` | Custom, self-contained 404 page |
 | `styles.css` | All styling — design tokens, layout, components, responsive, hover states |
 | `main.js` | Nav scroll, hamburger menu, scroll reveals, current year |
@@ -33,8 +33,8 @@ These are intentionally placeholder and marked with HTML comments in `index.html
 - **Examples** (`#work`) — swap the three sample cards for real client sites (screenshot + name).
 - **Testimonials** (`#reviews`) — replace the sample quotes with real ones, then remove the "Sample" chips. Don't publish invented reviews.
 - **About** (`#about`) — write your real story and name, swap the `LD` initials avatar for a photo.
-- **Contact email** — the footer links to `hello@launchdraft.net`; set that inbox up (or change the address).
-- **Intake form** (`start.html`) — currently shows a confirmation only. To receive submissions, point the `<form>` at a free service (e.g. FormSubmit or Formspree) once your inbox exists; see the comment above the form.
+- **Contact email** — the footer links to `douglas.launchdraft@gmail.com`; set that inbox up (or change the address).
+- **Intake form** (`start/index.html`) — currently shows a confirmation only. To receive submissions, point the `<form>` at a free service (e.g. FormSubmit or Formspree) once your inbox exists; see the comment above the form.
 - **Domain** — meta tags and the sitemap use `https://launchdraft.net`. If you launch elsewhere, update those absolute URLs.
 
 ## Deploy to GitHub Pages
