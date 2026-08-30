@@ -91,6 +91,13 @@
   footer a{color:#cdd3c8}
   footer small{display:block;margin-top:1.5rem;color:#8b9384}
 </style>
+
+<style>
+  .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .shot:hover img{transform:scale(1.06)}
+  .shot::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(20,40,28,.6),transparent 55%)}
+  .shot span{z-index:2}
+</style>
 </head>
 <body>
   <div class="demobar">✦ This is a demo site built by <a href="../index.html">LaunchDraft</a> — see what we can build for your business.</div>
@@ -155,12 +162,12 @@
         <h2>A few yards we're proud of.</h2>
       </div>
       <div class="gallery">
-        <div class="shot"><span>Backyard redesign</span></div>
-        <div class="shot"><span>Paver patio</span></div>
-        <div class="shot"><span>Front bed refresh</span></div>
-        <div class="shot"><span>Full sod install</span></div>
-        <div class="shot"><span>Garden borders</span></div>
-        <div class="shot"><span>Seasonal color</span></div>
+        <div class="shot"><img src="https://loremflickr.com/640/480/garden,backyard,lawn?lock=11" alt="Backyard redesign" loading="lazy" onerror="this.remove()"><span>Backyard redesign</span></div>
+        <div class="shot"><img src="https://loremflickr.com/640/480/patio,pavers,backyard?lock=12" alt="Paver patio" loading="lazy" onerror="this.remove()"><span>Paver patio</span></div>
+        <div class="shot"><img src="https://loremflickr.com/640/480/flowers,garden,bed?lock=13" alt="Front bed refresh" loading="lazy" onerror="this.remove()"><span>Front bed refresh</span></div>
+        <div class="shot"><img src="https://loremflickr.com/640/480/lawn,grass,green?lock=14" alt="Full sod install" loading="lazy" onerror="this.remove()"><span>Full sod install</span></div>
+        <div class="shot"><img src="https://loremflickr.com/640/480/garden,shrubs,hedge?lock=15" alt="Garden borders" loading="lazy" onerror="this.remove()"><span>Garden borders</span></div>
+        <div class="shot"><img src="https://loremflickr.com/640/480/flowers,garden,colorful?lock=16" alt="Seasonal color" loading="lazy" onerror="this.remove()"><span>Seasonal color</span></div>
       </div>
     </div></section>
 

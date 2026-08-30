@@ -93,6 +93,15 @@
   footer .brand{color:#fff}
   footer small{display:block;margin-top:1.4rem;color:#b79a7f}
 </style>
+
+<style>
+  .hero__art img,.about__art img,.item .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .item .pic{overflow:hidden}
+  .item .pic img{transition:transform .5s ease}
+  .item:hover .pic img{transform:scale(1.07)}
+  .hero__art{overflow:hidden;position:relative}
+  .about__art{overflow:hidden;position:relative}
+</style>
 </head>
 <body>
   <div class="demobar">✦ This is a demo site built by <a href="../index.html">LaunchDraft</a> — see what we can build for your business.</div>
@@ -118,7 +127,7 @@
           <a class="btn btn--ghost" href="#menu">See the menu</a>
         </div>
       </div>
-      <div class="hero__art"><b>Warm bread,<br>daily.</b></div>
+      <div class="hero__art"><img src="https://loremflickr.com/800/800/sourdough,bread,bakery?lock=21" alt="Fresh bread" loading="lazy" onerror="this.remove()"></div>
     </div></section>
 
     <section id="menu"><div class="wrap">
@@ -128,12 +137,12 @@
         <p>Rotating daily. Here's what's usually out by 7am.</p>
       </div>
       <div class="menu">
-        <article class="item"><div class="pic"></div><div class="body"><h3>Sourdough loaf</h3><span class="price">$7</span></div><div style="padding:0 1.3rem 1.2rem"><p>Naturally leavened, 24-hour rise, crackly crust.</p></div></article>
-        <article class="item"><div class="pic"></div><div class="body"><h3>Butter croissant</h3><span class="price">$4</span></div><div style="padding:0 1.3rem 1.2rem"><p>Laminated in-house, impossibly flaky.</p></div></article>
-        <article class="item"><div class="pic"></div><div class="body"><h3>Berry danish</h3><span class="price">$4.5</span></div><div style="padding:0 1.3rem 1.2rem"><p>Seasonal fruit and vanilla custard.</p></div></article>
-        <article class="item"><div class="pic"></div><div class="body"><h3>Cinnamon roll</h3><span class="price">$5</span></div><div style="padding:0 1.3rem 1.2rem"><p>Gooey center, cream-cheese glaze.</p></div></article>
-        <article class="item"><div class="pic"></div><div class="body"><h3>Focaccia</h3><span class="price">$6</span></div><div style="padding:0 1.3rem 1.2rem"><p>Rosemary and sea salt, olive-oil rich.</p></div></article>
-        <article class="item"><div class="pic"></div><div class="body"><h3>Celebration cake</h3><span class="price">from $38</span></div><div style="padding:0 1.3rem 1.2rem"><p>Made to order for birthdays and occasions.</p></div></article>
+        <article class="item"><div class="pic"><img src="https://loremflickr.com/500/350/sourdough,bread?lock=31" alt="" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Sourdough loaf</h3><span class="price">$7</span></div><div style="padding:0 1.3rem 1.2rem"><p>Naturally leavened, 24-hour rise, crackly crust.</p></div></article>
+        <article class="item"><div class="pic"><img src="https://loremflickr.com/500/350/croissant,pastry?lock=32" alt="" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Butter croissant</h3><span class="price">$4</span></div><div style="padding:0 1.3rem 1.2rem"><p>Laminated in-house, impossibly flaky.</p></div></article>
+        <article class="item"><div class="pic"><img src="https://loremflickr.com/500/350/danish,pastry,berry?lock=33" alt="" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Berry danish</h3><span class="price">$4.5</span></div><div style="padding:0 1.3rem 1.2rem"><p>Seasonal fruit and vanilla custard.</p></div></article>
+        <article class="item"><div class="pic"><img src="https://loremflickr.com/500/350/cinnamon,roll,bun?lock=34" alt="" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Cinnamon roll</h3><span class="price">$5</span></div><div style="padding:0 1.3rem 1.2rem"><p>Gooey center, cream-cheese glaze.</p></div></article>
+        <article class="item"><div class="pic"><img src="https://loremflickr.com/500/350/focaccia,bread?lock=35" alt="" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Focaccia</h3><span class="price">$6</span></div><div style="padding:0 1.3rem 1.2rem"><p>Rosemary and sea salt, olive-oil rich.</p></div></article>
+        <article class="item"><div class="pic"><img src="https://loremflickr.com/500/350/cake,birthday?lock=36" alt="" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Celebration cake</h3><span class="price">from $38</span></div><div style="padding:0 1.3rem 1.2rem"><p>Made to order for birthdays and occasions.</p></div></article>
       </div>
     </div></section>
 
@@ -143,7 +152,7 @@
           <h2>A neighborhood bakery, the way it should be.</h2>
           <p>We started Rise &amp; Crumb with one mixer and a simple idea: real ingredients, baked fresh, sold the same day. Everything you see was made this morning, a few steps from the counter.</p>
         </div>
-        <div class="about__art"></div>
+        <div class="about__art"><img src="https://loremflickr.com/700/560/bakery,interior?lock=22" alt="Inside the bakery" loading="lazy" onerror="this.remove()"></div>
       </div></div>
     </div></section>
 
