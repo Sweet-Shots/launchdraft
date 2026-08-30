@@ -579,6 +579,40 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
 .form-success.show { display: flex; }
 .form-success svg { width: 26px; height: 26px; color: var(--accent); flex: none; }
 
+/* Inline validation, LaunchDraft style */
+.field__error {
+  display: none; align-items: center; gap: .4rem;
+  font-size: var(--text-sm); font-weight: 600; color: #c8392b;
+  margin-top: -.15rem;
+}
+.field__error svg { width: 15px; height: 15px; flex: none; }
+.field--error > label,
+.field--error > legend { color: #c8392b; }
+.field--error input,
+.field--error textarea,
+.field--error select {
+  border-color: #d4493b;
+  background: #fbecea;
+}
+.field--error input:focus,
+.field--error textarea:focus,
+.field--error select:focus {
+  border-color: #d4493b;
+  box-shadow: 0 0 0 4px rgba(200,57,43,.16);
+}
+.field--error .field__error { display: flex; }
+.field--fieldset.field--error .plan-opt label { border-color: #d4493b; }
+
+/* Submit button shakes when a submit attempt fails validation */
+@keyframes ld-shake {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-5px); }
+  40%, 60% { transform: translateX(5px); }
+}
+.btn--shake { animation: ld-shake .5s cubic-bezier(.36,.07,.19,.97) both; }
+@media (prefers-reduced-motion: reduce) { .btn--shake { animation: none; } }
+
 @media (max-width: 640px) {
   .form__row { grid-template-columns: 1fr; }
   .plan-picker { grid-template-columns: 1fr; }
