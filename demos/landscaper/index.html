@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Everline Landscaping — Lawn care &amp; garden design</title>
+<title>Everline Landscaping · Demo</title>
 <meta name="description" content="Demo site by LaunchDraft. Everline Landscaping: lawn care, garden design, and hardscaping for homes across the valley." />
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,10 @@
   h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.05;margin:0;letter-spacing:-.01em}
   a{color:inherit;text-decoration:none}
   .wrap{width:100%;max-width:72rem;margin-inline:auto;padding-inline:1.5rem}
-  .demobar{background:var(--ink);color:#fff;font-size:.85rem;text-align:center;padding:.5rem 1rem}
+  .demobar{position:sticky;top:0;z-index:21;background:var(--ink);color:#fff;font-size:.85rem;text-align:center;padding:.5rem 1rem;display:flex;align-items:center;justify-content:center;gap:.6rem}
+  .demobar svg{width:1.2rem;height:1.2rem}
   .demobar a{color:#ffd8a8;font-weight:700;text-decoration:underline}
-  header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--cream) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid #e6e0d2}
+  header.nav{position:sticky;top:2.4rem;z-index:20;background:color-mix(in srgb,var(--cream) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid #e6e0d2}
   .nav__in{display:flex;align-items:center;justify-content:space-between;padding-block:1rem}
   .brand{display:flex;align-items:center;gap:.6rem;font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;color:var(--green)}
   .brand svg{width:30px;height:30px}
@@ -100,7 +101,7 @@
 </style>
 </head>
 <body>
-  <div class="demobar">✦ This is a demo site built by <a href="../index.html">LaunchDraft</a> — see what we can build for your business.</div>
+  <div class="demobar"><svg viewBox="0 0 270 270" fill="currentColor"><path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z"/></svg> This is a demo site built by <a href="/">LaunchDraft</a> — see what we can build for your business. <svg viewBox="0 0 270 270" fill="currentColor"><path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z"/></svg></div>
 
   <header class="nav"><div class="wrap nav__in">
     <a class="brand" href="#top"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#1f3d2b"/><path d="M16 6c4 3 6 6 6 10a6 6 0 1 1-12 0c0-4 2-7 6-10z" fill="#7fb069"/></svg> Everline</a>

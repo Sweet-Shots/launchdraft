@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lumière Hair Studio — Modern salon</title>
+<title>Lumière Hair Studio · Demo</title>
 <meta name="description" content="Demo site by LaunchDraft. Lumière Hair Studio: cuts, color, and styling by a friendly, expert team." />
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,10 @@
   h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.05;margin:0;letter-spacing:.005em}
   a{color:inherit;text-decoration:none}
   .wrap{width:100%;max-width:70rem;margin-inline:auto;padding-inline:1.5rem}
-  .demobar{background:var(--ink);color:#efe7db;font-size:.82rem;letter-spacing:.02em;text-align:center;padding:.5rem 1rem}
+  .demobar{position:sticky;top:0;z-index:21;background:var(--ink);color:#efe7db;font-size:.82rem;letter-spacing:.02em;text-align:center;padding:.5rem 1rem;display:flex;align-items:center;justify-content:center;gap:.6rem}
+  .demobar svg{width:1.2rem;height:1.2rem}
   .demobar a{color:var(--gold);font-weight:600;text-decoration:underline}
-  header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--ivory) 90%,transparent);backdrop-filter:blur(8px)}
+  header.nav{position:sticky;top:2.4rem;z-index:20;background:color-mix(in srgb,var(--ivory) 90%,transparent);backdrop-filter:blur(8px)}
   .nav__in{display:flex;align-items:center;justify-content:space-between;padding-block:1.1rem}
   .brand{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
   .nav__links{display:flex;gap:1.8rem;align-items:center}
@@ -85,7 +86,7 @@
 </style>
 </head>
 <body>
-  <div class="demobar">✦ This is a demo site built by <a href="../index.html">LaunchDraft</a> — see what we can build for your business.</div>
+  <div class="demobar"><svg viewBox="0 0 270 270" fill="currentColor"><path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z"/></svg> This is a demo site built by <a href="/">LaunchDraft</a> — see what we can build for your business. <svg viewBox="0 0 270 270" fill="currentColor"><path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z"/></svg></div>
 
   <header class="nav"><div class="wrap nav__in">
     <a class="brand" href="#top">Lumière</a>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rise &amp; Crumb — Neighborhood bakery</title>
+<title>Rise &amp; Crumb</title>
 <meta name="description" content="Demo site by LaunchDraft. Rise &amp; Crumb: fresh bread, pastries, and cakes baked every morning." />
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,10 @@
   h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.06;margin:0}
   a{color:inherit;text-decoration:none}
   .wrap{width:100%;max-width:70rem;margin-inline:auto;padding-inline:1.5rem}
-  .demobar{background:var(--cocoa-2);color:#fff;font-size:.85rem;text-align:center;padding:.5rem 1rem}
+  .demobar{position:sticky;top:0;z-index:21;background:var(--cocoa-2);color:#fff;font-size:.85rem;text-align:center;padding:.5rem 1rem;display:flex;align-items:center;justify-content:center;gap:.6rem}
+  .demobar svg{width:1.2rem;height:1.2rem}
   .demobar a{color:var(--butter);font-weight:800;text-decoration:underline}
-  header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--cream) 90%,transparent);backdrop-filter:blur(8px)}
+  header.nav{position:sticky;top:2.4rem;z-index:20;background:color-mix(in srgb,var(--cream) 90%,transparent);backdrop-filter:blur(8px)}
   .nav__in{display:flex;align-items:center;justify-content:space-between;padding-block:1rem}
   .brand{display:flex;align-items:center;gap:.55rem;font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--cocoa)}
   .brand svg{width:32px;height:32px}
@@ -104,7 +105,7 @@
 </style>
 </head>
 <body>
-  <div class="demobar">✦ This is a demo site built by <a href="../index.html">LaunchDraft</a> — see what we can build for your business.</div>
+  <div class="demobar"><svg viewBox="0 0 270 270" fill="currentColor"><path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z"/></svg> This is a demo site built by <a href="/">LaunchDraft</a> — see what we can build for your business. <svg viewBox="0 0 270 270" fill="currentColor"><path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z"/></svg></div>
 
   <header class="nav"><div class="wrap nav__in">
     <a class="brand" href="#top"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="#7a4a2b"/><path d="M8 18c0-5 3-8 8-8s8 3 8 8v3H8z" fill="#f2c078"/></svg> Rise &amp; Crumb</a>
