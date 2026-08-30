@@ -80,13 +80,19 @@
         </div>
 
         <!--
-          NOTE: This form currently shows a confirmation on the page.
-          To have submissions emailed to you, set action to a free form
-          service once your inbox exists, e.g. FormSubmit:
-            <form action="https://formsubmit.co/douglas.launchdraft@gmail.com" method="POST">
-          or Formspree. Then remove the demo submit handler at the bottom.
+          Submissions are emailed to douglas.launchdraft@gmail.com via FormSubmit
+          (https://formsubmit.co), a free no-backend form service. The script at the
+          bottom posts to FormSubmit's AJAX endpoint so the confirmation stays on-page.
+          FIRST-TIME SETUP: submit this form once on the live site, then click the
+          activation link FormSubmit emails you. After that, requests arrive in the inbox.
         -->
         <form class="form reveal" id="draftForm" style="--i:1" novalidate>
+          <!-- FormSubmit config (https://formsubmit.co) -->
+          <input type="hidden" name="_subject" value="New draft request from launchdraft.net" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- Honeypot: bots fill this, humans never see it -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
           <div class="form__row">
             <div class="field">
               <label for="name">Your name</label>
@@ -119,10 +125,6 @@
               <div class="plan-opt">
                 <input type="radio" id="plan-professional" name="plan" value="Professional" checked />
                 <label for="plan-professional"><b>Professional</b><small>$49 / mo + $349 setup</small></label>
-              </div>
-              <div class="plan-opt">
-                <input type="radio" id="plan-enterprise" name="plan" value="Enterprise" />
-                <label for="plan-enterprise"><b>Enterprise</b><small>From $99 / mo + from $699 setup</small></label>
               </div>
             </div>
             <span class="hint">Not sure? Pick your best guess. We'll help you choose.</span>
@@ -175,7 +177,6 @@
           <ul>
             <li><a href="/pricing/">Standard</a></li>
             <li><a href="/pricing/">Professional</a></li>
-            <li><a href="/pricing/">Enterprise</a></li>
           </ul>
         </div>
         <div>
@@ -195,25 +196,45 @@
 
   <script src="../main.js"></script>
   <script>
-    // Preselect plan from ?plan=standard|professional|enterprise
+    // Preselect plan from ?plan=standard|professional
     (function () {
       var plan = new URLSearchParams(location.search).get('plan');
       if (plan) {
         var el = document.getElementById('plan-' + plan.toLowerCase());
         if (el) el.checked = true;
       }
-      // Demo submit: validate, then show confirmation in place of a backend.
+      // Submit to FormSubmit's AJAX endpoint, then show the on-page confirmation.
       var form = document.getElementById('draftForm');
       var success = document.getElementById('success');
+      var ENDPOINT = 'https://formsubmit.co/ajax/douglas.launchdraft@gmail.com';
+      function showSuccess() {
+        form.style.display = 'none';
+        success.classList.add('show', 'in');
+        success.setAttribute('tabindex', '-1');
+        success.focus({ preventScroll: true });
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
       if (form) {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           if (!form.reportValidity()) return;
-          form.style.display = 'none';
-          success.classList.add('show', 'in');
-          success.setAttribute('tabindex', '-1');
-          success.focus({ preventScroll: true });
-          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          var btn = form.querySelector('button[type="submit"]');
+          var label = btn ? btn.innerHTML : '';
+          if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+          fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          })
+            .then(function (r) {
+              if (!r.ok) throw new Error('bad status ' + r.status);
+              return r.json();
+            })
+            .then(function () { showSuccess(); })
+            .catch(function () {
+              if (btn) { btn.disabled = false; btn.innerHTML = label; }
+              alert('Sorry, something went wrong sending your request. Please email douglas.launchdraft@gmail.com directly and we will get right back to you.');
+            });
         });
       }
     })();
