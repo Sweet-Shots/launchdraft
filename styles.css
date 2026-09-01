@@ -836,6 +836,7 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
 .legal__toc a:hover { text-decoration: underline; }
 .legal h2 { font-size: var(--text-xl); margin-top: var(--space-xl); scroll-margin-top: 5rem; color: var(--ink); }
 .legal h2 .legal__num { color: var(--accent); font-family: 'Bricolage Grotesque', sans-serif; margin-right: .4rem; }
+.legal__ref { font-weight: 700; color: var(--accent-ink); margin-right: .45rem; font-variant-numeric: tabular-nums; }
 .legal h3 { font-size: var(--text-lg); margin-top: var(--space-m); color: var(--ink); }
 .legal p, .legal li { color: var(--ink-soft); font-size: var(--text-base); line-height: 1.75; }
 .legal p { margin: var(--space-xs) 0; }
