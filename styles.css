@@ -821,3 +821,28 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
 .work__shot-img { display: block; width: 100%; height: auto; aspect-ratio: 13 / 9; object-fit: cover; object-position: top center; }
 .work__view { color: var(--accent-ink); font-weight: 700; white-space: nowrap; }
 @media (hover: hover) { .work__card:hover .work__view { text-decoration: underline; } }
+
+/* ---------------------------------------------------------------------------
+   Legal pages (Privacy, Terms) — readable prose, minimal motion
+--------------------------------------------------------------------------- */
+.legal { padding-block: var(--space-l) var(--space-2xl); }
+.legal .wrap { max-width: 48rem; }
+.legal__updated { font-size: var(--text-sm); color: var(--muted); margin: 0 0 var(--space-l); }
+.legal__intro { font-size: var(--text-lg); color: var(--ink-soft); line-height: 1.6; margin-bottom: var(--space-l); }
+.legal__toc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-s) var(--space-m); margin-bottom: var(--space-xl); }
+.legal__toc h2 { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 var(--space-xs); }
+.legal__toc ol { margin: 0; padding-left: 1.2rem; display: grid; gap: .35rem; }
+.legal__toc a { color: var(--accent-ink); font-weight: 600; text-decoration: none; }
+.legal__toc a:hover { text-decoration: underline; }
+.legal h2 { font-size: var(--text-xl); margin-top: var(--space-xl); scroll-margin-top: 5rem; color: var(--ink); }
+.legal h2 .legal__num { color: var(--accent); font-family: 'Bricolage Grotesque', sans-serif; margin-right: .4rem; }
+.legal h3 { font-size: var(--text-lg); margin-top: var(--space-m); color: var(--ink); }
+.legal p, .legal li { color: var(--ink-soft); font-size: var(--text-base); line-height: 1.75; }
+.legal p { margin: var(--space-xs) 0; }
+.legal ul, .legal ol.legal__list { margin: var(--space-xs) 0; padding-left: 1.4rem; display: grid; gap: .5rem; }
+.legal a { color: var(--accent-ink); }
+.legal strong { color: var(--ink); font-weight: 700; }
+.legal__note { background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: var(--space-s) var(--space-m); margin: var(--space-m) 0; }
+.legal__note p { margin: 0; font-size: var(--text-sm); color: var(--ink-soft); }
+.footer__legal a { color: inherit; }
+.footer__legal a:hover { color: var(--accent-tint); }
