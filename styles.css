@@ -847,3 +847,22 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
 .legal__note p { margin: 0; font-size: var(--text-sm); color: var(--ink-soft); }
 .footer__legal a { color: inherit; }
 .footer__legal a:hover { color: var(--accent-tint); }
+
+/* ---------------------------------------------------------------------------
+   Subtle branded scrollbar. Shows on desktop Chrome/Safari/Edge + Firefox;
+   Mac and mobile overlay-hide scrollbars, so it's a light touch, never relied on.
+   Kept normal width and high-contrast so it stays easy to grab.
+--------------------------------------------------------------------------- */
+html {
+  scrollbar-width: thin;                       /* Firefox */
+  scrollbar-color: #c3b09a var(--bg);          /* thumb, track */
+}
+::-webkit-scrollbar { width: 13px; height: 13px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: #c3b09a;                          /* warm taupe, on-brand */
+  border-radius: 999px;
+  border: 3px solid var(--bg);                 /* inset padding around the thumb */
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }  /* brand orange on hover */
