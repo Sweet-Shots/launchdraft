@@ -854,15 +854,15 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
    Kept normal width and high-contrast so it stays easy to grab.
 --------------------------------------------------------------------------- */
 html {
-  scrollbar-width: thin;                       /* Firefox */
-  scrollbar-color: #c3b09a var(--bg);          /* thumb, track */
+  scrollbar-width: thin;                        /* Firefox */
+  scrollbar-color: var(--ink) var(--surface);   /* navy thumb, warm-cream track */
 }
-::-webkit-scrollbar { width: 13px; height: 13px; }
-::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar { width: 14px; height: 14px; }
+::-webkit-scrollbar-track { background: var(--surface); }   /* warm cream, not default white */
 ::-webkit-scrollbar-thumb {
-  background: #c3b09a;                          /* warm taupe, on-brand */
+  background: var(--ink);                        /* brand navy — clearly custom */
   border-radius: 999px;
-  border: 3px solid var(--bg);                 /* inset padding around the thumb */
+  border: 3px solid var(--surface);             /* inset padding so the thumb reads as a pill */
   background-clip: padding-box;
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }  /* brand orange on hover */
