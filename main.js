@@ -17,9 +17,20 @@
   var toggle = document.querySelector('.nav__toggle');
   var menu = document.getElementById('navmenu');
   if (toggle && menu) {
+    var mainEl = document.getElementById('top') || document.querySelector('main');
+    var footerEl = document.querySelector('footer');
     var setOpen = function (open) {
       document.body.classList.toggle('menu-open', open);
       toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      // Hide the rest of the page from AT / tab order while the drawer is open
+      [mainEl, footerEl].forEach(function (el) { if (el) el.toggleAttribute('inert', open); });
+      if (open) {
+        var first = menu.querySelector('a, button');
+        if (first) first.focus();
+      } else if (document.activeElement && menu.contains(document.activeElement)) {
+        toggle.focus();
+      }
     };
     toggle.addEventListener('click', function () {
       setOpen(!document.body.classList.contains('menu-open'));

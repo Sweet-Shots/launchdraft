@@ -110,14 +110,14 @@ a { color: inherit; text-decoration: none; }
   will-change: transform;
 }
 .btn-primary {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
   color: #fff;
   box-shadow: 0 0 0 0 rgba(224,80,28,.35);
 }
 .btn-primary .arrow { transition: transform .2s ease; }
 @media (hover: hover) {
-  .btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 12px 26px -12px rgba(216,52,15,.7); }
+  .btn-primary:hover { background: #97350a; border-color: #97350a; transform: translateY(-2px); box-shadow: 0 12px 26px -12px rgba(216,52,15,.7); }
   .btn-primary:hover .arrow { transform: translateX(4px); }
   .btn-ghost:hover { background: var(--ink); color: var(--bg); transform: translateY(-2px); }
 }
@@ -243,7 +243,7 @@ a { color: inherit; text-decoration: none; }
    hero returns to a single column. Safe to remove wholesale.
    ========================================================= */
 /* Two-column hero ONLY while the showcase exists */
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   .hero .wrap:has(.hero__showcase) {
     display: grid;
     grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
@@ -263,7 +263,7 @@ a { color: inherit; text-decoration: none; }
   .hero .wrap:has(.hero__showcase) .hero__meta .stat b { font-size: var(--text-lg); }
 }
 .hero__showcase { display: none; }
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   .hero__showcase {
     display: block;
     justify-self: end;
@@ -537,7 +537,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- CTA band ---------- */
 .cta-band { position: relative; overflow: hidden; }
 .cta-band .wrap {
-  background: var(--accent);
+  background: var(--accent-deep);
   color: #fff;
   border-radius: var(--radius-lg);
   padding: var(--space-2xl) var(--space-xl);
@@ -545,7 +545,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
 }
 .cta-band h2 { font-size: var(--text-3xl); color: #fff; }
-.cta-band p { color: rgba(255,255,255,.9); font-size: var(--text-lg); margin: var(--space-s) auto var(--space-l); max-width: 44ch; }
+.cta-band p { color: #fff; font-size: var(--text-lg); margin: var(--space-s) auto var(--space-l); max-width: 44ch; }
 .cta-band .btn-primary { background: var(--ink); border-color: var(--ink); }
 @media (hover: hover) { .cta-band .btn-primary:hover { background: #0d1526; border-color: #0d1526; } }
 
@@ -655,6 +655,9 @@ html.js .reveal.in { opacity: 1; translate: 0; }
 }
 .nav__menu a.link[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
 @media (hover: hover) { .nav__menu a.link:hover::after { transform: scaleX(1); transform-origin: left; } }
+/* Keyboard focus: reveal the underline and add a clear outline */
+.nav__menu a.link:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 3px; }
+.nav__menu a.link:focus-visible::after { transform: scaleX(1); transform-origin: left; }
 
 .nav__toggle {
   display: none;
@@ -725,7 +728,7 @@ body.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-7px) rota
   outline: none; border-color: var(--accent);
   box-shadow: 0 0 0 4px rgba(224,80,28,.14);
 }
-.field input::placeholder, .field textarea::placeholder { color: #8a8175; }
+.field input::placeholder, .field textarea::placeholder { color: #6f6656; }
 /* Plan chooser as a fieldset — reset native chrome, style the legend like a label */
 fieldset.field { border: 0; margin: 0; padding: 0; min-inline-size: auto; }
 fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm); }
