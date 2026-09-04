@@ -941,6 +941,16 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
   .compare__card--diy:hover .compare__list--diy li:nth-child(4) svg { animation-delay: .15s; }
   .compare__card--diy:hover .compare__list--diy li:nth-child(5) svg { animation-delay: .2s; }
 
+  /* Hovering the done-for-you card gives each check a staggered pop */
+  .compare__card--us:hover .compare__list--us svg {
+    animation: us-check-pop .34s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  .compare__card--us:hover .compare__list--us li:nth-child(1) svg { animation-delay: 0s; }
+  .compare__card--us:hover .compare__list--us li:nth-child(2) svg { animation-delay: .05s; }
+  .compare__card--us:hover .compare__list--us li:nth-child(3) svg { animation-delay: .1s; }
+  .compare__card--us:hover .compare__list--us li:nth-child(4) svg { animation-delay: .15s; }
+  .compare__card--us:hover .compare__list--us li:nth-child(5) svg { animation-delay: .2s; }
+
   /* Heading and bullet text follow the same semantic color on hover */
   .compare__card--diy:hover h3,
   .compare__card--diy:hover .compare__list--diy li { color: #d23f2e; }
@@ -957,8 +967,16 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
   70%  { transform: scale(.94) rotate(4deg); }
   100% { transform: scale(1) rotate(0deg); }
 }
+/* Check pop: a happy bounce that mirrors the X (rotates the other way) */
+@keyframes us-check-pop {
+  0%   { transform: scale(1) rotate(0deg); }
+  40%  { transform: scale(1.3) rotate(8deg); }
+  70%  { transform: scale(.92) rotate(-4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
 @media (prefers-reduced-motion: reduce) {
-  .compare__card--diy:hover .compare__list--diy svg { animation: none; }
+  .compare__card--diy:hover .compare__list--diy svg,
+  .compare__card--us:hover .compare__list--us svg { animation: none; }
 }
 
 /* =========================================================
