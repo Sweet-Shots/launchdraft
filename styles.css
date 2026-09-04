@@ -665,7 +665,7 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
 .compare__card {
   border-radius: var(--radius-lg);
   padding: var(--space-l);
-  border: 2px solid var(--line);
+  border: 1px solid var(--line);
   background: var(--paper);
 }
 .compare__card h3 { font-size: var(--text-xl); margin-bottom: var(--space-s); }
@@ -730,13 +730,36 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
   .compare__card--diy:hover {
     transform: translateY(-4px);
     border-color: #d23f2e;
-    box-shadow: 0 0 0 3px rgba(210,63,46,.22), 0 22px 44px -24px rgba(210,63,46,.6);
+    box-shadow: 0 0 0 1.5px rgba(210,63,46,.28), 0 22px 44px -24px rgba(210,63,46,.6);
   }
   .compare__card--us:hover {
     transform: translateY(-6px);
     border-color: #37cf8e;
-    box-shadow: 0 0 0 3px rgba(55,207,142,.3), 0 26px 52px -24px rgba(55,207,142,.45);
+    box-shadow: 0 0 0 1.5px rgba(55,207,142,.36), 0 26px 52px -24px rgba(55,207,142,.45);
   }
+
+  /* Hovering the DIY card turns each X brick-red with a staggered pop */
+  .compare__card--diy:hover .compare__list--diy svg {
+    color: #d23f2e;
+    animation: diy-x-pop .32s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  .compare__card--diy:hover .compare__list--diy li:nth-child(1) svg { animation-delay: 0s; }
+  .compare__card--diy:hover .compare__list--diy li:nth-child(2) svg { animation-delay: .05s; }
+  .compare__card--diy:hover .compare__list--diy li:nth-child(3) svg { animation-delay: .1s; }
+  .compare__card--diy:hover .compare__list--diy li:nth-child(4) svg { animation-delay: .15s; }
+  .compare__card--diy:hover .compare__list--diy li:nth-child(5) svg { animation-delay: .2s; }
+}
+
+/* The X pop: a quick scale-and-twist as it flushes red */
+.compare__list--diy svg { transition: color .25s ease; }
+@keyframes diy-x-pop {
+  0%   { transform: scale(1) rotate(0deg); }
+  40%  { transform: scale(1.28) rotate(-9deg); }
+  70%  { transform: scale(.94) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .compare__card--diy:hover .compare__list--diy svg { animation: none; }
 }
 
 /* =========================================================
