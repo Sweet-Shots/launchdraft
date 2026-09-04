@@ -80,6 +80,34 @@
     });
   }
 
+  /* ---- Hero showcase: pointer-tracked tilt around its resting pose ---- */
+  if (!reduceMotion && finePointer) {
+    var showcase = document.querySelector('.hero__showcase');
+    var scard = showcase && showcase.querySelector('.showcase__card');
+    if (scard) {
+      var REST_X = 2.5, REST_Y = -6, RANGE = 7; // degrees
+      var sraf = null, snx = 0, sny = 0;
+      var sapply = function () {
+        sraf = null;
+        scard.style.setProperty('--sx', (REST_X - sny * RANGE).toFixed(2) + 'deg');
+        scard.style.setProperty('--sy', (REST_Y + snx * RANGE).toFixed(2) + 'deg');
+      };
+      showcase.addEventListener('pointermove', function (e) {
+        var r = scard.getBoundingClientRect();
+        snx = (e.clientX - r.left) / r.width - 0.5;
+        sny = (e.clientY - r.top) / r.height - 0.5;
+        if (!sraf) sraf = requestAnimationFrame(sapply);
+      });
+      showcase.addEventListener('pointerenter', function () { scard.classList.add('is-tilting'); });
+      showcase.addEventListener('pointerleave', function () {
+        if (sraf) { cancelAnimationFrame(sraf); sraf = null; }
+        scard.classList.remove('is-tilting');
+        scard.style.setProperty('--sx', REST_X + 'deg');
+        scard.style.setProperty('--sy', REST_Y + 'deg');
+      });
+    }
+  }
+
   /* ---- Current year ---- */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
