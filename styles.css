@@ -940,10 +940,17 @@ fieldset.field legend { padding: 0; font-weight: 700; font-size: var(--text-sm);
   .compare__card--diy:hover .compare__list--diy li:nth-child(3) svg { animation-delay: .1s; }
   .compare__card--diy:hover .compare__list--diy li:nth-child(4) svg { animation-delay: .15s; }
   .compare__card--diy:hover .compare__list--diy li:nth-child(5) svg { animation-delay: .2s; }
+
+  /* Heading and bullet text follow the same semantic color on hover */
+  .compare__card--diy:hover h3,
+  .compare__card--diy:hover .compare__list--diy li { color: #d23f2e; }
+  .compare__card--us:hover h3,
+  .compare__card--us:hover .compare__list--us li,
+  .compare__card--us:hover .compare__list--us svg { color: #37cf8e; }
 }
 
-/* The X pop: a quick scale-and-twist as it flushes red */
-.compare__list--diy svg { transition: color .25s ease; }
+/* Smooth the hover color shift on text and icons */
+.compare__card h3, .compare__list li, .compare__list svg { transition: color .25s ease; }
 @keyframes diy-x-pop {
   0%   { transform: scale(1) rotate(0deg); }
   40%  { transform: scale(1.28) rotate(-9deg); }
