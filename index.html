@@ -88,27 +88,87 @@
     <section class="hero" id="hero">
       <div class="blueprint" aria-hidden="true"></div>
       <div class="wrap">
-        <h1 class="hero__title reveal" style="--i:0">
-          From <span class="word-draft">Draft</span> to
-          <span class="word-launch">Launch<svg class="rocket" viewBox="0 0 270 270" aria-hidden="true" fill="currentColor"><path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z"/></svg></span>
-        </h1>
+        <div class="hero__col">
+          <h1 class="hero__title reveal" style="--i:0">
+            From <span class="word-draft">Draft</span> to
+            <span class="word-launch">Launch<svg class="rocket" viewBox="0 0 270 270" aria-hidden="true" fill="currentColor"><path d="M265,42 L4,130 L80,165 L208,83 L109,176 L96,233 L144,197 L201,222 Z"/></svg></span>
+          </h1>
 
-        <p class="hero__sub reveal" style="--i:1">
-          We design, build, and host a clean, professional website for your business,
-          then keep it up to date every month. You run the shop. We run the site.
-        </p>
+          <p class="hero__sub reveal" style="--i:1">
+            We design, build, and host a clean, professional website for your business,
+            then keep it up to date every month. You run the shop. We run the site.
+          </p>
 
-        <div class="hero__actions reveal" style="--i:2">
-          <a class="btn btn-primary" href="/start/">Start your draft <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost" href="/pricing/">See plans &amp; pricing</a>
+          <div class="hero__actions reveal" style="--i:2">
+            <a class="btn btn-primary" href="/start/">Start your draft <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="/pricing/">See plans &amp; pricing</a>
+          </div>
+          <p class="hero__note reveal" style="--i:3; margin-top: var(--space-s);">No tech skills needed. Free custom domain. Fast, secure hosting.</p>
+
+          <div class="hero__meta reveal" style="--i:4">
+            <div class="stat"><b>A few days</b><span>Typical draft turnaround</span></div>
+            <div class="stat"><b>Free domain</b><span>Included with hosting</span></div>
+            <div class="stat"><b>Monthly edits</b><span>Handled by us, no logins</span></div>
+          </div>
         </div>
-        <p class="hero__note reveal" style="--i:3; margin-top: var(--space-s);">No tech skills needed. Free custom domain. Fast, secure hosting.</p>
 
-        <div class="hero__meta reveal" style="--i:4">
-          <div class="stat"><b>A few days</b><span>Typical draft turnaround</span></div>
-          <div class="stat"><b>Free domain</b><span>Included with hosting</span></div>
-          <div class="stat"><b>Monthly edits</b><span>Handled by us, no logins</span></div>
-        </div>
+        <!-- ============================================================
+             HERO SHOWCASE  (blueprint that builds into a finished site)
+             EASY TO REMOVE: delete this entire <aside> block and the hero
+             falls back to a single centered column automatically. The
+             matching styles are fenced under "HERO SHOWCASE" in styles.css.
+             ============================================================ -->
+        <aside class="hero__showcase reveal" style="--i:2" aria-hidden="true">
+          <div class="showcase__card">
+            <div class="showcase__bar">
+              <span class="showcase__dots"><i></i><i></i><i></i></span>
+              <span class="showcase__url">yourbusiness.com</span>
+            </div>
+            <div class="showcase__screen">
+              <!-- Finished site (revealed as the blueprint clears) -->
+              <div class="mini">
+                <div class="mini__nav">
+                  <span class="mini__logo"><i></i>Fern &amp; Field</span>
+                  <span class="mini__links"><i></i><i></i><i></i></span>
+                  <span class="mini__cta">Book</span>
+                </div>
+                <div class="mini__hero">
+                  <div class="mini__copy">
+                    <span class="mini__eyebrow">Landscaping &amp; design</span>
+                    <strong class="mini__h1">Gardens that grow with you.</strong>
+                    <span class="mini__p"></span>
+                    <span class="mini__p mini__p--short"></span>
+                    <span class="mini__btn">Get a free quote</span>
+                  </div>
+                  <div class="mini__art" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none"><path d="M32 54c0-14 8-22 18-26-2 12-8 22-18 26Z" fill="currentColor" opacity=".9"/><path d="M32 54c0-12-7-19-16-22 1 11 7 19 16 22Z" fill="currentColor" opacity=".55"/><path d="M32 56V38" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+                  </div>
+                </div>
+                <div class="mini__cards">
+                  <span class="mini__tile"></span>
+                  <span class="mini__tile"></span>
+                  <span class="mini__tile"></span>
+                </div>
+              </div>
+              <!-- Blueprint overlay (the "draft") -->
+              <div class="mini-bp" aria-hidden="true">
+                <span class="mini-bp__tag">draft</span>
+                <span class="bp bp-nav"><b>nav</b></span>
+                <span class="bp bp-logo"><b>logo</b></span>
+                <span class="bp bp-h1"><b>H1</b></span>
+                <span class="bp bp-line"></span>
+                <span class="bp bp-line bp-line--2"></span>
+                <span class="bp bp-btn"><b>CTA</b></span>
+                <span class="bp bp-img"><b>IMG</b></span>
+                <span class="bp bp-tile bp-tile--1"></span>
+                <span class="bp bp-tile bp-tile--2"></span>
+                <span class="bp bp-tile bp-tile--3"></span>
+              </div>
+              <span class="showcase__scan" aria-hidden="true"></span>
+            </div>
+          </div>
+          <span class="showcase__caption"><span class="showcase__pip"></span>Draft to Launch, on loop</span>
+        </aside>
       </div>
     </section>
 

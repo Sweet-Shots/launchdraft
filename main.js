@@ -47,6 +47,39 @@
   // Tell the in-head failsafe that reveals are wired up (so it won't force-show).
   window.__revealReady = true;
 
+  /* ---- Example cards: pointer-tracked 3D tilt ---- */
+  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!reduceMotion && finePointer) {
+    var MAX_TILT = 7; // degrees
+    document.querySelectorAll('.work__card').forEach(function (card) {
+      var frame = card.querySelector('.work__frame');
+      if (!frame) return;
+      var raf = null, nx = 0, ny = 0;
+      var apply = function () {
+        raf = null;
+        card.style.setProperty('--ry', (nx * MAX_TILT).toFixed(2) + 'deg');
+        card.style.setProperty('--rx', (-ny * MAX_TILT).toFixed(2) + 'deg');
+      };
+      card.addEventListener('pointermove', function (e) {
+        var r = frame.getBoundingClientRect();
+        nx = (e.clientX - r.left) / r.width - 0.5;   // -0.5 .. 0.5
+        ny = (e.clientY - r.top) / r.height - 0.5;
+        if (!raf) raf = requestAnimationFrame(apply);
+      });
+      card.addEventListener('pointerenter', function () {
+        card.classList.add('is-tilting');
+        card.style.setProperty('--ty', '-6px');
+      });
+      card.addEventListener('pointerleave', function () {
+        if (raf) { cancelAnimationFrame(raf); raf = null; }
+        card.classList.remove('is-tilting');
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+        card.style.setProperty('--ty', '0px');
+      });
+    });
+  }
+
   /* ---- Current year ---- */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
