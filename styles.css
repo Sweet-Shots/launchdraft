@@ -393,15 +393,6 @@ a { color: inherit; text-decoration: none; }
 .bp-tile--2 { left: 37%; }
 .bp-tile--3 { left: 68%; }
 
-/* Scan line that sweeps as the draft becomes the site */
-.showcase__scan {
-  position: absolute; left: 0; right: 0; top: 0; height: 3px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  box-shadow: 0 0 14px 2px rgba(224,80,28,.5);
-  opacity: 0; z-index: 3;
-  animation: scan-cycle 9s ease-in-out infinite;
-}
-
 @keyframes bp-cycle {
   0%, 24%   { opacity: 1; }
   38%, 88%  { opacity: 0; }
@@ -412,16 +403,9 @@ a { color: inherit; text-decoration: none; }
   40%, 88%  { opacity: 1; transform: none; }
   100%      { opacity: 0; transform: translateY(9px) scale(.985); }
 }
-@keyframes scan-cycle {
-  0%, 22%   { opacity: 0; top: 0; }
-  25%       { opacity: 1; }
-  39%       { top: 100%; opacity: .9; }
-  42%, 100% { opacity: 0; top: 100%; }
-}
 @media (prefers-reduced-motion: reduce) {
   .mini { opacity: 1; animation: none; transform: none; }
-  .mini-bp, .showcase__scan { animation: none; }
-  .mini-bp { opacity: 0; }
+  .mini-bp { animation: none; opacity: 0; }
 }
 
 /* ---------- Section scaffolding ---------- */
